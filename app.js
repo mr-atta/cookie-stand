@@ -34,7 +34,38 @@ Store.prototype.salesCookies = function () {
 }
 
 
+// show as a table 
 
+
+let container = document.getElementById('listOFvalues');
+let tableEl = document.createElement('table');
+container.appendChild(tableEl);
+// table header
+let tr1 = document.createElement('tr');
+tableEl.appendChild(tr1);
+ let th1 = document.createElement('th');
+ tr1.appendChild(th1);
+ th1.textContent = 'Store Name';
+
+ for (let index = 0; index < hoursWork.length; index++) {
+
+    let thEl = document.createElement('th');
+    tr1.appendChild(thEl);
+    thEl.textContent = `${hoursWork[index]}`
+  }
+
+
+// table footer 
+let tfooterEl = document.createElement('tf');
+tableEl.appendChild(tfooterEl);
+let trf = document.createElement('tr');
+tfooterEl.appendChild(trf);
+let tdf = document.createElement('td');
+trf.appendChild(tdf);
+tdf.textContent = 'TOTAL' ;
+
+// let trf2 = document.createElement('tr');
+// tfooterEl.appendChild(trf2);
 
 
 Store.prototype.render = function () {
@@ -43,20 +74,8 @@ Store.prototype.render = function () {
     let tableEl = document.createElement('table');
     container.appendChild(tableEl);
 
-// line 1
-    let tr1 = document.createElement('tr');
-    tableEl.appendChild(tr1);
-     let th1 = document.createElement('th');
-     tr1.appendChild(th1);
-     th1.textContent = 'Store Name';
 
-     for (let index = 0; index < hoursWork.length; index++) {
-
-        let thEl = document.createElement('th');
-        tr1.appendChild(thEl);
-        thEl.textContent = `${hoursWork[index]}`
-      }
-// line 2
+// table body 
 
     let tr2 = document.createElement('tr');
     tableEl.appendChild(tr2);
@@ -68,7 +87,9 @@ Store.prototype.render = function () {
         tdEl.textContent = `${this.cookiesNumEachH[index]}`
       }
 
-
+// footer line
+//   let trf = document.createElement('tr');
+//   tableEl.appendChild
 
 
     //  let trEl2 = document.createElement('tr');
@@ -125,17 +146,20 @@ let paris = new Store('paris', 20, 38, 2.3);
 let lima = new Store('lima', 2, 16, 4.6);
 
 
+
+
+
 Seattle.RandomNum();
 Seattle.salesCookies();
 Seattle.render();
 
 tokyo.RandomNum();
 tokyo.salesCookies();
-// tokyo.render();
+tokyo.render();
 
 dubai.RandomNum();
 dubai.salesCookies();
-// dubai.render();
+dubai.render();
 
 paris.RandomNum();
 paris.salesCookies();
@@ -144,6 +168,7 @@ paris.render();
 lima.RandomNum();
 lima.salesCookies();
 lima.render();
+
 
 console.log(stores);
 
