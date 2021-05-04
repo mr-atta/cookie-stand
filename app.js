@@ -3,6 +3,7 @@
 let hoursWork = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 am', '1 pm', '2pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm'];
 
 let stores = [];
+let tota1 = 0 ;
 
 function Store(locationName, minCustomersperH, maxCustomersperH, avgCookiesperC) {
     this.locationName = locationName;
@@ -13,8 +14,9 @@ function Store(locationName, minCustomersperH, maxCustomersperH, avgCookiesperC)
     this.RandomNumArrayForCperH = [];
     this.cookiesNumEachH = [];
     this.Summation = 0;
-    stores.push(this);
-
+    
+    this.total=0
+stores.push(this);
 }
 
 Store.prototype.RandomNum = function () {
@@ -40,42 +42,61 @@ Store.prototype.salesCookies = function () {
 let container = document.getElementById('listOFvalues');
 let tableEl = document.createElement('table');
 container.appendChild(tableEl);
-// table header
-let tr1 = document.createElement('tr');
-tableEl.appendChild(tr1);
- let th1 = document.createElement('th');
- tr1.appendChild(th1);
- th1.textContent = 'Store Name';
 
- for (let index = 0; index < hoursWork.length; index++) {
+function tableHead() {
+    // table header
+    let tr1 = document.createElement('tr');
+    tableEl.appendChild(tr1);
+    let th1 = document.createElement('th');
+    tr1.appendChild(th1);
+    th1.textContent = 'Store Name';
 
-    let thEl = document.createElement('th');
-    tr1.appendChild(thEl);
-    thEl.textContent = `${hoursWork[index]}`
-  }
+    for (let index = 0; index < hoursWork.length; index++) {
+
+        let thEl = document.createElement('th');
+        tr1.appendChild(thEl);
+        thEl.textContent = `${hoursWork[index]}`
+    }
+//  let trT = document.createElement('tr');
+//  tableEl.appendChild(trT);
+ let thT = document.createElement('th');
+ tr1.appendChild(thT);
+ thT.textContent = 'Total';
+
+}
+
+function tableFoot() {
+    // table footer 
+
+    let trFoot = document.createElement('tr');
+    tableEl.appendChild(trFoot);
+    let thfoot = document.createElement('th');
+    trFoot.appendChild(thfoot);
+    thfoot.textContent = 'Total';
+
+    for (let index = 0; index < hoursWork.length; index++) {
+
+        let thFootEl = document.createElement('th');
+        trFoot.appendChild(thFootEl);
+     tota1 = tota1 + ( thFootEl.textContent = Seattle.cookiesNumEachH[index] + tokyo.cookiesNumEachH[index] + dubai.cookiesNumEachH[index] + paris.cookiesNumEachH[index] + lima.cookiesNumEachH[index]);
+    }
+
+    let tdFT = document.createElement('th');
+    trFoot.appendChild(tdFT);
+    tdFT.textContent = tota1 + Seattle.Summation + tokyo.Summation + dubai.Summation + paris.Summation + lima.Summation ; 
 
 
-// table footer 
-let tfooterEl = document.createElement('tf');
-tableEl.appendChild(tfooterEl);
-let trf = document.createElement('tr');
-tfooterEl.appendChild(trf);
-let tdf = document.createElement('td');
-trf.appendChild(tdf);
-tdf.textContent = 'TOTAL' ;
 
-// let trf2 = document.createElement('tr');
-// tfooterEl.appendChild(trf2);
-
+}
 
 Store.prototype.render = function () {
 
-    let container = document.getElementById('listOFvalues');
-    let tableEl = document.createElement('table');
-    container.appendChild(tableEl);
+    // let container = document.getElementById('listOFvalues');
+    // let tableEl = document.createElement('table');
+    // container.appendChild(tableEl);
 
 
-// table body 
+    // table body 
 
     let tr2 = document.createElement('tr');
     tableEl.appendChild(tr2);
@@ -84,12 +105,17 @@ Store.prototype.render = function () {
 
         let tdEl = document.createElement('td');
         tr2.appendChild(tdEl);
-        tdEl.textContent = `${this.cookiesNumEachH[index]}`
-      }
+        tdEl.textContent = this.cookiesNumEachH[index];
+    }
 
-// footer line
-//   let trf = document.createElement('tr');
-//   tableEl.appendChild
+    let tdT = document.createElement('th');
+    tr2.appendChild(tdT);
+    tdT.textContent = this.Summation ;
+
+    console.log(this.Summation);
+    // footer line
+    //   let trf = document.createElement('tr');
+    //   tableEl.appendChild
 
 
     //  let trEl2 = document.createElement('tr');
@@ -146,7 +172,7 @@ let paris = new Store('paris', 20, 38, 2.3);
 let lima = new Store('lima', 2, 16, 4.6);
 
 
-
+tableHead();
 
 
 Seattle.RandomNum();
@@ -169,8 +195,12 @@ lima.RandomNum();
 lima.salesCookies();
 lima.render();
 
+tableFoot();
+
 
 console.log(stores);
+console.log(tota1);
+
 
 
 
