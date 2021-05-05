@@ -1,0 +1,49 @@
+body {
+  font-family: cursive;
+  padding: 20px;
+  background-color: rgb(219, 196, 164);
+  border: double;
+  color: black;
+}
+#picture {
+  box-sizing: border-box;
+  width: 100%;
+  float: right;
+  padding-bottom: 50px;
+}
+header {
+  background-color: #478c8e;
+  padding-block-start: inherit;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+nav ul li a {
+  text-decoration: none;
+  background-color: rgb(39, 100, 110);
+  color: rgb(17, 17, 17);
+  margin-left: 80%;
+  border: 2px solid black;
+}
+#mainParagraph {
+  margin-top: 0px;
+  padding-left: 66px;
+}
+#a1 {
+  text-decoration: none;
+  background-color: rgb(39, 100, 110);
+  color: rgb(17, 17, 17);
+  margin-left: 85%;
+  border: 2px solid black;
+}
+#a2 {
+  text-decoration: none;
+  background-color: rgb(39, 100, 110);
+  color: rgb(17, 17, 17);
+  margin-left: 73%;
+  border: 2px solid black;
+}
+
+footer {
+  background-color: rgba(122, 80, 161, 0.329);
+  margin-top: 0px;
+}
