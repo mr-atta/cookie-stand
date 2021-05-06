@@ -15,7 +15,7 @@ function Store(locationName, minCustomersperH, maxCustomersperH, avgCookiesperC)
     this.cookiesNumEachH = [];
     this.Summation = 0;
     
-    this.total=0
+    
 stores.push(this);
 }
 
@@ -74,21 +74,38 @@ function tableFoot() {
     trFoot.appendChild(thfoot);
     thfoot.textContent = 'Total';
 
+    
     for (let index = 0; index < hoursWork.length; index++) {
-
-        let thFootEl = document.createElement('th');
-        trFoot.appendChild(thFootEl);
-     tota1 = tota1 + ( thFootEl.textContent = Seattle.cookiesNumEachH[index] + tokyo.cookiesNumEachH[index] + dubai.cookiesNumEachH[index] + paris.cookiesNumEachH[index] + lima.cookiesNumEachH[index]);
+       
+       let total = 0 ;
+       
+        for (let i = 0; i < stores.length; i++) {
+          
+             total += stores[i].cookiesNumEachH[index];
+            
+        }
+         let thFootEl2= document.createElement('td');
+             trFoot.appendChild(thFootEl2);
+             thFootEl2.textContent = total 
+            //  tota1 = tota1 + total
+    //  tota1 = tota1 + ( thFootEl.textContent = Seattle.cookiesNumEachH[index] + tokyo.cookiesNumEachH[index] + dubai.cookiesNumEachH[index] + paris.cookiesNumEachH[index] + lima.cookiesNumEachH[index] );
+    
     }
 
     let tdFT = document.createElement('th');
     trFoot.appendChild(tdFT);
-    tdFT.textContent = tota1 + Seattle.Summation + tokyo.Summation + dubai.Summation + paris.Summation + lima.Summation ; 
+
+    for (let i = 0; i < stores.length; i++) {
+          
+        tota1 += stores[i].cookiesNumEachH[i];
+       
+   }
+   tdFT.textContent = tota1 ;
+    // tdFT.textContent = Seattle.Summation + tokyo.Summation + dubai.Summation + paris.Summation + lima.Summation; 
 
 
 
 }
-
 Store.prototype.render = function () {
 
     // let container = document.getElementById('listOFvalues');
@@ -100,7 +117,9 @@ Store.prototype.render = function () {
 
     let tr2 = document.createElement('tr');
     tableEl.appendChild(tr2);
-    tr2.textContent = `${this.locationName}`
+    let thElB = document.createElement('th');
+    tr2.appendChild(thElB);
+    thElB.textContent = `${this.locationName}`
     for (let index = 0; index < this.cookiesNumEachH.length; index++) {
 
         let tdEl = document.createElement('td');
@@ -164,6 +183,7 @@ Store.prototype.render = function () {
 
 // }
 
+////////////////////////////////////////////////////////////////////////////
 
 let Seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('tokyo', 3, 24, 1.2);
@@ -195,15 +215,15 @@ lima.RandomNum();
 lima.salesCookies();
 lima.render();
 
+
+
+
+// console.log(stores);
+// console.log(tota1);
+
 tableFoot();
 
-
-console.log(stores);
-console.log(tota1);
-
-
-
-
+/////////////////////////////////////////////////////////////////
 // obj Seattle
 
 // let Seattle = {
@@ -479,3 +499,34 @@ console.log(tota1);
 //   lima.salesCookies();
 
 //   lima.render();
+
+
+let storeFORM = document.getElementById('storeForm');
+storeFORM.addEventListener('submit',AddStore);
+function AddStore (event){
+ event.preventDefault();
+
+ let locationName = event.target.locationName.value;
+ let minCustomersperH = event.target.minCustomersperH.value;
+ let maxCustomersperH = event.target.maxCustomersperH.value;
+ let avgCookiesperC = event.target.avgCookiesperC.value;
+
+ tableEl.removeChild(tableEl.lastChild);
+
+ let newLocation = new Store(locationName,minCustomersperH,maxCustomersperH,avgCookiesperC)
+
+//  stores.push(newLocation);
+
+
+ newLocation.RandomNum();
+ newLocation.salesCookies();
+ newLocation.render();
+
+
+ tableFoot();
+
+console.log(locationName,minCustomersperH,maxCustomersperH,avgCookiesperC);
+console.log(stores);
+}
+
+
