@@ -1,0 +1,85 @@
+body {
+  font-family: cursive;
+  padding: 20px;
+  background-color: rgb(219, 196, 164);
+  border: double;
+  color: black;
+}
+#picture {
+  box-sizing: border-box;
+  width: 100%;
+  float: right;
+  padding-bottom: 50px;
+}
+header {
+  background-color: #478c8e;
+  padding-block-start: inherit;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+nav ul li a {
+  text-decoration: none;
+  background-color: rgb(39, 100, 110);
+  color: rgb(17, 17, 17);
+  margin-left: 80%;
+  border: 2px solid black;
+}
+#mainParagraph {
+  margin-top: 0px;
+  padding-left: 66px;
+}
+#a1 {
+  text-decoration: none;
+  background-color: rgb(39, 100, 110);
+  color: rgb(17, 17, 17);
+  margin-left: 85%;
+  border: 2px solid black;
+}
+#a2 {
+  text-decoration: none;
+  background-color: rgb(39, 100, 110);
+  color: rgb(17, 17, 17);
+  margin-left: 73%;
+  border: 2px solid black;
+}
+
+footer {
+  background-color: rgba(122, 80, 161, 0.329);
+  margin-top: 0px;
+}
+
+#storeForm {
+  border: 5px solid gray;
+  padding: 1%;
+  background-image: url(img/salmon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-position-x: 75%;
+}
+#submit-button {
+  background-color: #739c90;
+  border-left-color: currentcolor;
+  font-family: cursive;
+  margin-left: 31%;
+}
+h1 {
+  font-size: x-large;
+  font-style: italic, bold;
+}
+#picture {
+  padding-top: 60px;
+  padding-bottom: 85px;
+}
+#list {
+  background-color: #bb9da3;
+  border-radius: 25px;
+  border: 2px solid #27646e59;
+}
+footer a {
+  background-color: #1f5761;
+  border-radius: 7px;
+  border: 2px solid #04040459;
+  color: black;
+}
+}

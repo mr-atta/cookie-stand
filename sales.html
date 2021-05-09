@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salmon/Sales</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        table{
+            box-sizing: border-box;
+            width: 100%;
+            float: right;
+        }
+        th  {
+         border: solid rgb(52, 132, 134);
+         width: 100px;
+        }
+        td {
+              border: solid rgb(61, 209, 214);
+              width: 100px;
+        }
+        table,tr{
+            border: solid rgb(61, 209, 214);
+        } 
+        #tableTitle{
+            text-align: center ;
+            padding-top: 15px;
+            background-color: rgba(49, 131, 131, 0.61);
+            color: rgb(73, 14, 141);
+        }
+        tt {
+            text-align: center;
+            font-size: large;
+            font-family: inherit ;
+            font-style: italic;
+
+        }
+     
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salmon Cookies-Sales Page</h1>
+        <nav>
+            <ul><li><a href="index.html">Home</a></li></ul>
+        </nav>
+        <hr><hr>
+    </header>
+
+    <main>
+        <!-- form for new store -->
+        <!-- (locationName, minCustomersperH, maxCustomersperH, avgCookiesperC) -->
+<br>
+        <form action="" id="storeForm">
+            <fieldset>
+                
+                <legend> Adding a new store  </legend> <br>
+                
+                <label for="locationName">Store Name</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="locationName" name="locationName" type="text" placeholder="The name of the store">
+                <br>
+                <label for="minCustomersperH">minmmum customer/h</label>
+                &nbsp;&nbsp;<input id="minCustomersperH" name="minCustomersperH" type="number" placeholder="minmmum customer/h">
+                <br>
+                <label for="maxCustomersperH">maximmum customer/h</label>
+                <input id="maxCustomersperH" name="maxCustomersperH" type="number" placeholder="maximmum customer/h">
+                <br>
+                <label for="avgCookiesperC">Average cookies /c</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="avgCookiesperC" name="avgCookiesperC" type="text" placeholder="Average cookies /c">
+                <br>
+                <input id="submit-button" type="submit" value="Add">
+            </fieldset>
+        </form>
+
+      <br><br><hr>
+
+      <article id="tableTitle">
+      <section><p>The Average of our sales in each branch, Seattle, Tokyo, Dubai, Paris, Lima.</p></section>
+      </article>
+
+      <div id="listOFvalues">
+
+
+      </div>
+   
+    </main>
+
+    <footer id="salesFoot">
+        <hr>
+      <p>Salmon Cookies website </p>
+      <p>Our Branches around the world: Seattle, Tokyo, Dubai, Paris, Lima.</p>
+      <hr>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
