@@ -92,7 +92,7 @@ function tableFoot() {
     
     }
 
-    let tdFT = document.createElement('th');
+    let tdFT = document.createElement('tt');
     trFoot.appendChild(tdFT);
 
     for (let i = 0; i < stores.length; i++) {
@@ -127,7 +127,7 @@ Store.prototype.render = function () {
         tdEl.textContent = this.cookiesNumEachH[index];
     }
 
-    let tdT = document.createElement('th');
+    let tdT = document.createElement('tt');
     tr2.appendChild(tdT);
     tdT.textContent = this.Summation ;
 
